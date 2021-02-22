@@ -6,6 +6,8 @@
   "license": null,
   "main": "./dist/electron/main.js",
   "scripts": {
+    "start": "electron .",
+    "package": "electron-packager . okexapp --win --out okexapp --overwrite  --app-version=0.0.1", 
     "build": "node .electron-vue/build.js && electron-builder",
     "build:dir": "node .electron-vue/build.js && electron-builder --dir",
     "build:clean": "cross-env BUILD_TARGET=clean node .electron-vue/build.js",

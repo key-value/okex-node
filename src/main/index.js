@@ -24,7 +24,7 @@ function createWindow () {
   })
 
   mainWindow.loadURL(winURL)
-
+  // mainWindow.webContents.openDevTools(); //打包后打开控制台
   mainWindow.on('closed', () => {
     mainWindow = null
   })
