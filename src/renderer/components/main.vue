@@ -1,5 +1,5 @@
 <template>
-  <el-container style=" border: 1px solid #eee">
+  <el-container style="height:100vh; border: 1px solid #eee">
     <el-header style="text-align: right; font-size: 12px">
       <el-row>
         <el-button type="primary">导入</el-button>
@@ -8,28 +8,30 @@
     >
     <el-main
       ><el-row>
-        <el-card class="box-card">
-          <div slot="header" class="clearfix">
-            <span>btc-usdt</span>
-          </div>
-          <div>
-            {{ "列表内容 " }}
-          </div> </el-card
-        ><el-card class="box-card">
-          <div slot="header" class="clearfix">
-            <span>eth-btc</span>
-          </div>
-          <div>
-            {{ "列表内容 " }}
-          </div> </el-card
-        ><el-card class="box-card">
-          <div slot="header" class="clearfix">
-            <span>eth-usdt</span>
-          </div>
-          <div>
-            {{ "列表内容 " }}
-          </div>
-        </el-card></el-row
+        <div id="cardList">
+          <el-card class="box-card">
+            <div slot="header" class="clearfix">
+              <span>btc-usdt</span>
+            </div>
+            <div>
+              {{ "列表内容 " }}
+            </div> </el-card
+          ><el-card class="box-card">
+            <div slot="header" class="clearfix">
+              <span>eth-btc</span>
+            </div>
+            <div>
+              {{ "列表内容 " }}
+            </div> </el-card
+          ><el-card class="box-card">
+            <div slot="header" class="clearfix">
+              <span>eth-usdt</span>
+            </div>
+            <div>
+              {{ "列表内容 " }}
+            </div>
+          </el-card>
+        </div></el-row
       >
       <el-table :data="tableData">
         <el-table-column
@@ -51,7 +53,7 @@
     </el-main>
   </el-container>
 </template>
-<style>
+<style lang="scss" scoped>
 .el-header {
   background-color: #b3c0d1;
   color: #333;
@@ -60,9 +62,6 @@
 
 .el-aside {
   color: #333;
-}
-.text {
-  font-size: 14px;
 }
 
 .item {
@@ -78,8 +77,18 @@
   clear: both;
 }
 
+#cardList {
+  display: flex;
+}
 .box-card {
-  width: 480px;
+  margin: 0 5px;
+  // width: 320px;
+  flex-grow: 1;
+  justify-content: center;
+}
+.el-card /deep/ .el-card__body {
+  font-size: 12px;
+  padding: 13px;
 }
 </style>
 <script>
